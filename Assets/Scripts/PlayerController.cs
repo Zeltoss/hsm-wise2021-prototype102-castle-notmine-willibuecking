@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public ParticleSystem dust;
     public int levelPercentage;
     public float level = 4;
 
     private int remainingJumps = 2;
 
-    private float jumpForce = 300;     //define how strong the jump should be, e.g. how high the player flies
+    private float jumpForce = 350;     //define how strong the jump should be, e.g. how high the player flies
 
     public RestartScene scenerestarter;
     private AudioManager _audioManager;
@@ -38,6 +39,7 @@ public class PlayerController : MonoBehaviour
             levelPercentage += 1;            //count number of jumps so far
             jumpForce -= 5;                 //slows the player down over time by decreasing the jump height (hopefully, should be tested)
             Debug.Log(levelPercentage);
+            dust.Play();
         }
 
 
@@ -65,11 +67,14 @@ public class PlayerController : MonoBehaviour
     {
         if (other.tag == "Rock")       //destroy rock if it hits a stair or falls out of bounds
         {
-            Destroy(gameObject);
+            // Destroy(gameObject);
             _audioManager.GameOverSound();
             scenerestarter.Restart();
         }
     }
-    
+    void CreateDust()
+    {
+        dust.Play();
+    }
 
 }

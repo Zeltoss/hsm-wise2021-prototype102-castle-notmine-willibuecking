@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class StairsMover : MonoBehaviour
 {
-
     private float levelNumber;
     
     
@@ -19,7 +18,7 @@ public class StairsMover : MonoBehaviour
         }
 
     }
-    private void OnTriggerEnter(Collider other)     //destroy a set of stairs if it is hit by a falling rock
+    private void OnTriggerEnter(Collider other)     //destroy a set of stairs if it is hit by a falling cannonball
     {
         Destroy(gameObject);
     }

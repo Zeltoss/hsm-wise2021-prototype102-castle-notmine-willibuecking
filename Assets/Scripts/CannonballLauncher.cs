@@ -30,7 +30,6 @@ public class CannonballLauncher : MonoBehaviour
 
         if(!cannonballLaunchedPlayer)
         {
-            StartCoroutine("RockTimerPlayer");        //start the cannonballlauncher
             cannonballLaunchedPlayer = true;
         }
     }

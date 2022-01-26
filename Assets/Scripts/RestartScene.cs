@@ -7,7 +7,7 @@ public class RestartScene : MonoBehaviour
 {
     public void Update()
     {
-        if (Input.GetKeyDown("r")) {
+        if (Input.GetKeyDown("r")) {            // Reloads the Scene after pressing "R"
             Restart();
         }
     }

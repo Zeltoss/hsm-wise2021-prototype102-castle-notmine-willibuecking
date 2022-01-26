@@ -9,7 +9,7 @@ public class ExplosionController : MonoBehaviour
         StartCoroutine("Destroy");
     }
 
-    IEnumerator Destroy ()
+    IEnumerator Destroy ()                  // Destroys falling GameObjects (Stones etc.) after 4 Seconds
     {
         yield return new WaitForSeconds(4);
         Destroy(gameObject);

@@ -17,7 +17,7 @@ public class StairsLauncher : MonoBehaviour
     void Update()
     {   
         levelNumber = GameObject.Find("Player").GetComponent<PlayerController>().level;
-        timeToLaunch = (1f/levelNumber)-0.001f;
+        timeToLaunch = (1f/levelNumber)-0.001f;      // Zeit bist zum spawn neuer Treppen
 
         if(!stairLaunched)
         {
@@ -26,7 +26,7 @@ public class StairsLauncher : MonoBehaviour
         }
     }
 
-    public IEnumerator StairLaunch()
+    public IEnumerator StairLaunch()            // Wartet auf die angegebene Zeit und launched neue Treppen
     {
         yield return new WaitForSeconds(timeToLaunch);
         

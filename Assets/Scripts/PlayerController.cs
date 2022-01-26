@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerController : MonoBehaviour
@@ -51,8 +52,9 @@ public class PlayerController : MonoBehaviour
 
         if (transform.position.y <= -8)        //restart scene if player falls down
         {
-            _audioManager.GameOverSound();
-            scenerestarter.Restart();
+            //_audioManager.GameOverSound();
+            SceneManager.LoadScene("GameOver");
+            //scenerestarter.Restart();
         }
 
         
@@ -68,8 +70,9 @@ public class PlayerController : MonoBehaviour
         if (other.tag == "Rock")       //destroy rock if it hits a stair or falls out of bounds
         {
             // Destroy(gameObject);
-            _audioManager.GameOverSound();
-            scenerestarter.Restart();
+            //_audioManager.GameOverSound();
+            SceneManager.LoadScene("GameOver");
+            //scenerestarter.Restart();
         }
     }
     void CreateDust()

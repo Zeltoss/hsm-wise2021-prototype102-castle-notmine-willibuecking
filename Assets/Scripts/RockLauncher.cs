@@ -14,8 +14,6 @@ public class RockLauncher : MonoBehaviour
     private float playerX;      //variables for players position on x and z axis
     private float playerZ;
 
-    // private Vector3 playerRockPosition;     //variable for rocklaunch-position over players head
-
 
     void Update()
     {
